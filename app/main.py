@@ -6,14 +6,14 @@ from app.core.config import Settings
 from app.services.embeddings_service import EmbeddingService
 from app.services.qdrant_service import QdrantService   
 
-logger = logging.getLogger("unicorn")
+logger = logging.getLogger("uvicorn")
 logger.info("*** JAYDARI RAG STARTS ***")
 
 
-@asynccontextmanager
+@asynccontextmanager # Start of application
 async def lifespan(app: FastAPI):
     settings = Settings()
-    app.state.settings = settings
+    app.state.settings = settings # config settings is stored here 
 
 
     logging.basicConfig(
