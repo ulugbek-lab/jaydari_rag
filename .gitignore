@@ -9,3 +9,7 @@ __pycache__
 # Editor 
 .vscode/
 .idea/
+
+
+ .DS_Store
+ app/.DS_Store
