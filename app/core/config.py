@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     llm_model: str 
     llm_adapter_path: str | None = None
     llm_device: str = 'cpu'
-    llm_max_new_tokens: int = 256
+    llm_max_new_tokens: int
     llm_temperature: float = 0.2
 
     # Intended RAG behavior
@@ -40,7 +40,7 @@ class Settings(BaseSettings):
     max_sources: int = 2
 
     # Intended document chunking
-    chunk_size_chars: int = 200
+    chunk_size_chars: int = 1200
     chunk_overlap_chars: int = 200
     qdrant_timeout: float = 10.0
 
