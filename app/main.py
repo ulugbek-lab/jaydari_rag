@@ -12,7 +12,7 @@ logger = logging.getLogger("uvicorn")
 logger.info("*** JAYDARI RAG STARTS ***")
 
 
-@asynccontextmanager # Start of application
+@asynccontextmanager # Start of application after connecting to database successfully
 async def lifespan(app: FastAPI):
     settings = Settings()
     app.state.settings = settings # config settings is stored here 

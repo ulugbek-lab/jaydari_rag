@@ -73,7 +73,7 @@ class RAGService:
                 use_rag = not self._is_general_question(question)
                 if filtered:
                     top_score = max(source['score'] for source in filtered)
-                    if top_score < self._settings.max_score_strict:
+                    if top_score < self._settings.min_score_strict:
                         use_rag = False
             if use_rag and filtered:
                 max_sources = min(self._settings.top_k, self._settings.max_sources)

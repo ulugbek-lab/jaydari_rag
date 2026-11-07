@@ -16,7 +16,7 @@ def get_rag_service(request: Request) -> RAGService:
     return request.app.state.rag 
     
 
-@router.post('/ingest-path', response_model=IngestPathResponse)
+@router.post('/ingest-path', response_model=IngestPathResponse) # show the path of file to RAG
 def ingest_path(payload: IngestPathRequest, rag: RAGService = Depends(get_rag_service)) -> IngestPathResponse:
     ingested, skipped = rag.ingest_folder(payload.path) # save data path to db 
     return IngestPathResponse(ingested=ingested, skipped=skipped)
